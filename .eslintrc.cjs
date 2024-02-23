@@ -16,18 +16,22 @@ module.exports = {
                 ".eslintrc.{js,cjs}"
             ],
             "parserOptions": {
-                "sourceType": "script",
-                "project": "./tsconfig.json"
+                "sourceType": "script"
             }
         }
     ],
     "parserOptions": {
         "ecmaVersion": "latest",
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react"
     ],
     "rules": {
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/consistent-type-imports": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
     }
 }
