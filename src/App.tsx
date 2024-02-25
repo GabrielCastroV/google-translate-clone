@@ -5,6 +5,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import { AUTO_LANGUAGE } from './constants'
 import { ArrowsIcon } from './components/Icons'
 import { LanguageSelector } from './components/LanguageSelector'
+import { SectionType } from './types'
 
 function App () {
   const { fromLanguage, toLanguage, interchangeLanguage, setFromLanguage, setToLanguage } = useStore()
@@ -14,7 +15,7 @@ function App () {
 
         <Row>
           <Col>
-            <LanguageSelector onChange={setFromLanguage}/>
+            <LanguageSelector type={SectionType.From} value={fromLanguage} onChange={setFromLanguage}/>
           </Col>
           <Col>
             <Button variant='link' disabled={fromLanguage === AUTO_LANGUAGE} onClick={interchangeLanguage}>
@@ -22,7 +23,7 @@ function App () {
             </Button>
           </Col>
           <Col>
-            <LanguageSelector onChange={setToLanguage}/>
+            <LanguageSelector type={SectionType.To} value={toLanguage} onChange={setToLanguage}/>
           </Col>
         </Row>
     </Container>
